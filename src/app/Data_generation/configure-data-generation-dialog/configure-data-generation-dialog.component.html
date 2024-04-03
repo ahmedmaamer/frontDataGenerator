@@ -1,0 +1,129 @@
+<div class="container">
+  <div class="row top-bar">
+    <h4>Add New Device</h4>
+  </div>
+  <div class="row device-details">
+    <p>Device ID: {{ data.deviceId }}</p>
+    <p>Device Name: {{ device.deviceName }}</p>
+    <div
+      *ngFor="let attribute of attributes; let i = index"
+      class="row attribute-row"
+    >
+      <div class="attribute-row">
+        <label for="attributeName{{ i }}">Attribute Name:</label>
+        <select
+          id="attributeName{{ i }}"
+          [(ngModel)]="attributes[i].attributeName"
+          (change)="updateAttributeValue(i)"
+        >
+          <option *ngFor="let key of getAttributeKeys()" [value]="key">
+            {{ key }}
+          </option>
+        </select>
+        <select
+          id="attributeType{{ i }}"
+          *ngIf="attributes[i].attributeType !== 'Boolean'"
+          [(ngModel)]="attributes[i].generationMethod"
+          (change)="updateGenerationFields(i)"
+        >
+          <option value="">Select Generation Method</option>
+          <ng-container *ngIf="attributes[i].attributeType === 'Integer'">
+            <option value="Random">Random</option>
+            <option value="RandomList">Random List</option>
+          </ng-container>
+          <ng-container *ngIf="attributes[i].attributeType === 'String'">
+            <option value="RandomList">Random List</option>
+            <option value="Pattern">Pattern</option>
+          </ng-container>
+          <ng-container *ngIf="attributes[i].attributeType === 'Date'">
+            <option value="RangeBetweenTwoDates">
+              Range Between Two Dates
+            </option>
+            <option value="ListOfDates">List of Dates</option>
+          </ng-container>
+        </select>
+        <button class="remove-button" (click)="removeAttribute(i)">
+          Remove
+        </button>
+      </div>
+      <div
+        class="attribute-row"
+        *ngIf="attributes[i].generationMethod === 'Random'"
+      >
+        <label for="minValue{{ i }}">Min Value:</label>
+        <input
+          type="number"
+          id="minValue{{ i }}"
+          [(ngModel)]="attributes[i].minValue"
+        />
+        <label for="maxValue{{ i }}">Max Value:</label>
+        <input
+          type="number"
+          id="maxValue{{ i }}"
+          [(ngModel)]="attributes[i].maxValue"
+        />
+      </div>
+      <div
+        class="attribute-row"
+        *ngIf="attributes[i].generationMethod === 'RandomList'"
+      >
+        <label for="randomList{{ i }}">Random List:</label>
+        <textarea
+          id="randomList{{ i }}"
+          [(ngModel)]="attributes[i].randomList"
+        ></textarea>
+      </div>
+      <div
+        class="attribute-row"
+        *ngIf="attributes[i].generationMethod === 'Pattern'"
+      >
+        <label for="pattern{{ i }}">Pattern:</label>
+        <input
+          type="text"
+          id="pattern{{ i }}"
+          [(ngModel)]="attributes[i].pattern"
+        />
+      </div>
+      <div
+        class="attribute-row"
+        *ngIf="attributes[i].generationMethod === 'RangeBetweenTwoDates'"
+      >
+        <label for="startDate{{ i }}">Start Date:</label>
+        <input
+          type="date"
+          id="startDate{{ i }}"
+          [(ngModel)]="attributes[i].startDate"
+        />
+        <label for="endDate{{ i }}">End Date:</label>
+        <input
+          type="date"
+          id="endDate{{ i }}"
+          [(ngModel)]="attributes[i].endDate"
+        />
+      </div>
+      <div
+        class="attribute-row"
+        *ngIf="attributes[i].generationMethod === 'ListOfDates'"
+      >
+        <label for="dateList{{ i }}">List of Dates:</label>
+        <textarea
+          id="dateList{{ i }}"
+          [(ngModel)]="attributes[i].dateList"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <button class="add-attribute-button" (click)="addAttribute()">
+        Add Attribute
+      </button>
+    </div>
+  </div>
+  <div class="row bottom-buttons">
+    <button class="col btn-save" (click)="saveConfiguration()">
+      Save Configuration
+    </button>
+    <button class="col btn-generate" (click)="generateData()">
+      Generate Data
+    </button>
+  </div>
+</div>

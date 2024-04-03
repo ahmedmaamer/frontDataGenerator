@@ -1,0 +1,109 @@
+<div class="top-bar">
+  <h3>Add New Device</h3>
+</div>
+
+<div class="outerbody container">
+  <igx-stepper #stepper>
+    <ng-template igxStepActiveIndicator>
+      <igx-icon>edit</igx-icon>
+    </ng-template>
+
+    <igx-step>
+      <span igxStepTitle>Device Details</span>
+      <div igxStepContent>
+        <div class="form-group">
+          <label for="deviceName">Device Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="deviceName"
+            [(ngModel)]="device.deviceName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="deviceType">Device Type</label>
+          <input
+            type="text"
+            class="form-control"
+            id="deviceType"
+            [(ngModel)]="device.deviceType"
+          />
+        </div>
+        <div class="sample-step-actions">
+          <button
+            igxButton="contained"
+            (click)="stepper.next()"
+            [disabled]="stepper.linear"
+          >
+            NEXT
+          </button>
+        </div>
+      </div>
+    </igx-step>
+
+    <igx-step #step2>
+      <span igxStepTitle>Attributes Details</span>
+      <div igxStepContent>
+        <div [formGroup]="deviceForm">
+          <div class="row">
+            <div class="col">
+              <input
+                class="form-control"
+                type="text"
+                formControlName="key"
+                placeholder="Key"
+                style="margin-right: 5px"
+              />
+            </div>
+            <div class="col">
+              <input
+                class="form-control"
+                type="text"
+                formControlName="value"
+                placeholder="Value"
+                style="margin-right: 5px"
+              />
+            </div>
+            <div class="col">
+              <button class="add-button" (click)="addAttribute()">
+                Add Attribute
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngFor="let key of getAttributeKeys(); let i = index">
+          <div class="row">
+            <div class="col">
+              <input
+                class="form-control"
+                type="text"
+                [value]="key"
+                placeholder="Key"
+                style="margin-right: 5px"
+                readonly
+              />
+            </div>
+            <div class="col">
+              <input
+                class="form-control"
+                type="text"
+                [(ngModel)]="attributes[key]"
+                placeholder="Value"
+                style="margin-right: 5px"
+              />
+            </div>
+            <div class="col">
+              <button class="remove-button" (click)="removeAttribute(key)">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <button igxButton="raised" (click)="createDevice()">
+          Create Device
+        </button>
+      </div>
+    </igx-step>
+  </igx-stepper>
+</div>

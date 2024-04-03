@@ -1,0 +1,159 @@
+/* Top bar styling */
+.top-bar {
+  background-color: #007bff;
+  color: white;
+  width: 800px;
+}
+
+/* Outer body container */
+.device-details {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.container {
+background-color: #ffffff;
+max-height: 900px;
+ width: 800px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.device-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.attribute-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.attribute-row label {
+  margin-right: 10px;
+}
+
+.attribute-row input,
+.attribute-row textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+
+
+.attribute-row label,
+.attribute-row select,
+.attribute-row .attribute-type {
+  margin-right: 10px;
+}
+
+.attribute-row select {
+  width: 150px; /* Adjust the width as needed */
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+/* Select styling */
+.attribute-row select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.attribute-row select:hover{
+  border-color: #007bff;
+}
+
+/* Customizing arrow icon for select */
+.attribute-row select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 24px; /* Adjust as needed */
+}
+
+/* Style for the addAttribute button */
+.add-attribute-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-attribute-button:hover {
+  background-color: #0056b3;
+}
+
+.btn-save {
+  margin-right: 10px; /* Add margin-right to create a gap */
+}
+
+.btn-save,
+.btn-generate {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50px;
+}
+
+.btn-save:hover,
+.btn-generate:hover {
+  background-color: #0056b3;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 92vh; /* Ensure the container takes full height of the viewport */
+}
+
+.device-details {
+  flex: 1; /* Expand to fill available space */
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  margin-bottom: 30px;
+  width: 80;
+}

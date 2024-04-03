@@ -1,0 +1,85 @@
+{
+    "Utilisateur":[
+        {
+            "uid" : 1,
+            "username" : "anastra",
+            "unom" : "anas",
+            "uprenom" : "trabelsi",
+            "uemail" : "anas.tr@gmail.com",
+            "utel": 26140595,
+            "umdp" :"aaaaa"
+        },
+        {
+            "uid" : 2,
+            "username" : "mh",
+            "unom" : "mahdi",
+            "uprenom" : "trabelsi",
+            "uemail" : "mah.tr@gmail.com",
+            "utel": 20000000,
+            "umdp" :"bbbbb"
+        }
+    ],
+    "Role":[
+        {
+            "idrole" :1,
+            "LeRole": "CLIENT"
+        },
+        { 
+            "idrole" :1,
+            "LeRole": "ADMINISTRATEUR"
+        }
+
+    ],
+    "Produit":[
+        {
+            "prodref": 1,
+            "prodPrix": 250,
+             "prodMarque": "Nike",
+             "prodDescription": "aaaa",
+             "prodQte": 25,
+             "prodDispo":"OUI",
+             "taille": "S",
+             "couleur": "Noire"
+        }
+
+    ],
+    "Paiement":[
+        {
+            "IdP": 1,
+            "etatP": "réussi",
+            "DateP": ""
+        }
+    ],
+    "Panier":[
+        {
+            "idpanier": 1,
+            "MontantTot": 500,
+            "NbreArticle": 7
+        }
+    ],
+    "Livraison":[
+        {
+            "idL": 1,
+            "etatLiv": "en_cours",
+            "fraisLiv": 10,
+            "delaisLiv": "3 jours"
+        }
+    ],
+    "Commande":[
+        {
+            "CmdId": 1,
+            "CmdDate": "",
+            "MontantTot": 100,
+            "etatCmd": "réussi"
+        }
+    ],
+    "Adresse":[
+        {
+            "idAdr": 1,
+            "rue": "aaaa",
+            "ville": "tunis",
+            "pays": "Tunisie",
+            "codePostal": 1213
+        }
+    ]
+}

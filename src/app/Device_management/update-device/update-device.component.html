@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="title-line">
+    <h3>Update Device</h3>
+    <hr class="line" />
+  </div>
+  <form class="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Device Type</label>
+      <input
+        class="form-control"
+        type="text"
+        id="deviceType"
+        [(ngModel)]="device.deviceType"
+        name="deviceType"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Latitude</label>
+      <input
+        class="form-control"
+        type="number"
+        id="latitude"
+        [(ngModel)]="device"
+        name="latitude"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Longitude</label>
+      <input
+        class="form-control"
+        type="number"
+        id="longitude"
+        [(ngModel)]="device"
+        name="longitude"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Temperature</label>
+      <input
+        class="form-control"
+        type="number"
+        id="temperature"
+        [(ngModel)]="device"
+        name="temperature"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Humidity</label>
+      <input
+        class="form-control"
+        type="number"
+        id="humidity"
+        [(ngModel)]="device"
+        name="humidity"
+      />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Update device</button>
+  </form>
+</div>

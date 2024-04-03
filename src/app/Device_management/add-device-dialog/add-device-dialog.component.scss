@@ -1,0 +1,56 @@
+/* Top bar styling */
+.top-bar {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+}
+
+/* Outer body container */
+.outerbody {
+  background-color: #ffffff;
+  height: 495px;
+  max-height: max-content;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Sample step actions styling */
+.sample-step-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Adjust delete button alignment */
+.delete {
+  margin-top: 25px; /* Adjust this value as needed */
+}
+.add-button{
+  background-color: #2ae58b;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+.remove-button {
+  background-color: #e52a46;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover{
+  background-color: #01a857;
+
+}
+.remove-button:hover {
+  background-color: #ee1031;
+}

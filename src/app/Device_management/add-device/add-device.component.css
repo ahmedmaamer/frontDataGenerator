@@ -1,0 +1,30 @@
+.container {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    font-size: 24px;
+    color: #2a1381;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bolder;
+  }
+  
+  .line {
+    border: none;
+    border-top: 2px solid #007bff;
+  }
+  
+  .form {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding for consistent spacing */
+  }
+  
+  /* Add additional styles as needed for form elements */
+  
